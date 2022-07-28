@@ -1,0 +1,1 @@
+This file represents an in-depth explanation of all of the changes done from previous version.
