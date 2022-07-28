@@ -65,6 +65,11 @@
 
 <?php
 
+/*
+ * "docker compose up" starts server
+ * "Ctrl+C" hotkey stops server
+ */
+
 $pdo = new PDO('mysql:dbname=tutorial;host=mysql', 'tutorial', 'secret', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
 $query = $pdo->query('SHOW VARIABLES like "version"');
@@ -77,12 +82,6 @@ $row = $query->fetch();
 </html>
 
 <!--
-
-on refresh
-show current month and colour current day differently
-like ubuntu calendar
-
-look up "moment.js"
 
 do calendar in php
 learn php + javascript + sql + css + html
