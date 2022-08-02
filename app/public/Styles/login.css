@@ -1,0 +1,43 @@
+body {
+    font-family: system-ui;
+    background: #ffb4b4;
+    color: white;
+    text-align: center;
+}
+
+#loginContainer {
+    z-index: 11; /*controls "depth" of modal*/
+    padding: 25px;
+    background-color: #ffb4b4;
+    color: #404d6c;
+    box-shadow: 0px 0px 3px #ffb4b4;
+    border-radius: 10px;
+    width: 300px;
+    height: 150px;
+    top: 350px;
+    left: calc(50% - 154px); /*indents modal from left*/
+    position: absolute;
+}
+
+#usernameInput, #passwordInput {
+    width: 300px;
+    height: 40px;
+}
+
+#usernameInput::placeholder, #passwordInput::placeholder {
+    font-size: 25px;
+    text-align: center;
+    background-color: #394770;
+    color: #ffb4b4;
+}
+
+#submitInput {
+    padding:5px 15px;
+    background: #394770;
+    color: #ffb4b4;
+    border:0 none;
+    cursor: pointer;
+    border-radius: 5px;
+    left: calc(50% - 55px); /*indents modal from left*/
+    position: absolute;
+}

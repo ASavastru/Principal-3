@@ -10,3 +10,11 @@ TODO:
 - change everything to moment.js
 - add login
 - finish ui
+
+
+/*
+* "docker compose up" starts server
+* "Ctrl+C" hotkey stops server
+*
+* we need to add login functionality with encrypted passowrd
+  */

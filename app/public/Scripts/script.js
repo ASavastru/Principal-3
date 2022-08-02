@@ -166,6 +166,14 @@ function load() {
     }
 }
 
+function sendAxios() {
+    let params = new URLSearchParams();
+    params.append('parameter', 'value');
+    axios.post('/engine.php', params).then(response => {
+        console.log(response)
+    });
+}
+
 function openModal(date) {
     // function that opens the modal
 
