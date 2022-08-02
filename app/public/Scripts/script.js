@@ -1,8 +1,8 @@
 let nav = 0;
-//Tracks clicks for prevMonth and nextMonth with increments
+// Tracks clicks for prevMonth and nextMonth with increments
 
 let clicked = null;
-//receives date of day clicked by user
+// receives date of day clicked by user
 
 let appointments = localStorage.getItem('appointments') ?JSON.parse(localStorage.getItem('appointments')) : [];
 // array of appointment objects that exists in localstorage
@@ -22,9 +22,32 @@ const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satur
 // this array helps determine padding days
 
 function load() {
-    const dt = new Date();
+    let dt = new Date();
     // current date is assigned to dt
+    //line 27
 
+    let getURL = window.location.href;
+    // object that can be used to get the current
+    // page address (URL) and to redirect the browser to a new page.
+
+    getURL = new URL(getURL);
+    let x = getURL.searchParams.get("selectedDate");
+
+    if(x !== null) {
+        let date = new Date();
+        dateArray = x.split("-");
+        date.setFullYear(dateArray[0]);
+        date.setMonth(dateArray[1]);
+        date.setDate(dateArray[2]);
+        // dt = date;
+    }
+
+    // getURL gets url
+    // x gets after /? in url
+    // if x!==null (no date selected means x=null)
+    // changes dt to date
+
+    nav = localStorage.getItem("navigator") ?JSON.parse(localStorage.getItem('navigator')) : [];
     if (nav !== 0) {
         dt.setMonth(new Date().getMonth() + nav);
     }
@@ -66,8 +89,13 @@ function load() {
     // date of the first day of month
 
     document.getElementById('monthDisplay').innerText =
-        `${dt.toLocaleDateString('en-UK', {month: 'long'})} ${year}`;
+        getMonthNameByNumber(dt.getMonth()+1) + " " + dt.getFullYear();
+        //`${dt.toLocaleDateString('en-UK', {month: 'long'})} ${year}`;
     // sends month and year to html in order to be displayed in the page
+
+    function getMonthNameByNumber(monthNumeric){
+        return moment(monthNumeric, 'M').format('MMMM');
+    }
 
     calendar.innerHTML = '';
     // whenever load() is called but before
@@ -90,8 +118,14 @@ function load() {
             // logic that determines if
             // a padding day needs to be rendered
             // or a daySquare
+            let monthAdjust = dt.getMonth() + 1;
+            let selectedDate = dt.getFullYear().toString() + "-" + monthAdjust.toString() + "-" + (i-paddingDays).toString();
+            // creates date format for each day
+            // for use in daySquare.setAttribute
+            // e in div data
 
             daySquare.innerText = i - paddingDays;
+            daySquare.setAttribute('data-date', selectedDate); // data-***** is a thing
             // renders the day in the div
 
             const appointmentForDay = appointments.find(e => e.date === dayString);
@@ -106,16 +140,21 @@ function load() {
             if(appointmentForDay) {
                 const appointmentDiv = document.createElement('div');
                 appointmentDiv.classList.add('appointment');
-                appointmentDiv.innerText = appointmentForDay.title;
+                // appointmentDiv.innerText = appointmentForDay.title+" "+nameTest;
                 daySquare.appendChild(appointmentDiv);
             }
             // if there is one,
             // shows appointment
 
-            daySquare.addEventListener('click', () =>
-                openModal(dayString));
+            daySquare.addEventListener('click', () => {
+                openModal(dayString); // doesn't work anymore !!!!!!!!!!!!!
+                let clickedDate = daySquare.dataset.date; // no need for target because is not child object
+                document.getElementById('selectedDate').value = clickedDate;
+                document.getElementById('submitSelectedDate').click();
+            });
             // listens for clicks on each div
             // and calls openModal for the specific date clicked
+
 
         } else {
             daySquare.classList.add('padding');
@@ -196,12 +235,14 @@ function deleteAppointment() {
 function initButtons() {
     document.getElementById("nextButton").addEventListener('click', () => {
         nav++;
+        localStorage.setItem("navigator", nav); // stores nav as long as
         load();
     });
     // increments nav on nextButton click and reloads page to display next month
 
     document.getElementById("backButton").addEventListener('click', () => {
         nav--;
+        localStorage.setItem("navigator", nav); // stores nav as long as
         load();
     });
     // decrements nav on backButton click and reloads page to display previous month
@@ -231,30 +272,3 @@ initButtons(); // initializes buttons
 
 // TODO: learn try/catch and other related stuff
 //  learn debugging stuffs
-
-
-/*
-
-docker-ul pregateste un environment de lucru
-el se ocupa doar de setup
-
-pana la sfarsit de saptamana tot
-pana la extragerea si inserarea in baza de date
-
-protected vs public vs all the others pentru dimineata
-
-TOATE DATELE DIN DB SA FIE ACCESIBILE, UTILIZABILE, VALIDATE
-
-appointments:
-    "[{"date":"12/7/2022","title":"Do a Tutorial"}," +
-    "{"date":"12/7/2022","title":"Do a Tutorial"}," +
-    "{"date":"12/7/2022","title":"Do a Tutorial"}," +
-    "{"date":"12/7/2022","title":"Do a Tutorial"}," +
-    "{"date":"1/7/2022","title":"Do a Tutorial"}," +
-    "{"date":"7/7/2022","title":"Hopa Sa"}," +
-    "{"date":"7/7/2022","title":"Hopa Sa"}," +
-    "{"date":"7/7/2022","title":"Hopa Sa"}," +
-    "{"date":"6/7/2022","title":"Hopa Sa"}," +
-    "{"date":"17/7/2022","title":"TEST"}]"
-
-*/

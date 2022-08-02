@@ -74,12 +74,25 @@ button {
     transition-duration: 0.4s;
 }
 
-.day + #currentDay {
+#currentDay {
     color: #ff8585;
     background-color: #596c96;
+    transition-duration: 0.4s;
 }
 
 #currentDay:hover {
+    color: #ff8585;
+    background-color: #2b438a;
+    transition-duration: 0.4s;
+}
+
+#clickedDay {
+    color: #ffbfbf;
+    background-color: #8fa7da;
+    transition-duration: 0.4s;
+}
+
+#clickedDay:hover {
     color: #ff8585;
     background-color: #2b438a;
     transition-duration: 0.4s;
@@ -172,4 +185,13 @@ button {
     height: 100vh;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.8);
+}
+
+#hiddenForm {
+    visibility: hidden;
+    display: none;
+}
+
+#visibleForm {
+    visibility: visible;
 }
