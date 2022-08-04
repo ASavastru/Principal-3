@@ -146,11 +146,15 @@ function load() {
             // if there is one,
             // shows appointment
 
-            daySquare.addEventListener('click', () => {
-                openModal(dayString); // doesn't work anymore !!!!!!!!!!!!!
-                let clickedDate = daySquare.dataset.date; // no need for target because is not child object
+            daySquare.addEventListener('click', (event) => {
+                let clickedDate = event.target.dataset.date;
                 document.getElementById('selectedDate').value = clickedDate;
-                document.getElementById('submitSelectedDate').click();
+                openModal(clickedDate);
+                // let url = new URL(window.location.href);
+                // window.location.setParameter('')
+                // url.searchParams.set('selectedDate', clickedDate);
+                // window.location.href = url.href;
+
             });
             // listens for clicks on each div
             // and calls openModal for the specific date clicked
@@ -166,20 +170,19 @@ function load() {
     }
 }
 
-function sendAxios() {
-    let params = new URLSearchParams();
-    params.append('parameter', 'value');
-    axios.post('/engine.php', params).then(response => {
-        console.log(response)
-    });
-}
+// function sendAxios() {
+//     let params = new URLSearchParams();
+//     params.append('parameter', 'value');
+//     axios.post('/engine.php', params).then(response => {
+//         console.log(response)
+//     });
+// }
 
 function openModal(date) {
     // function that opens the modal
-
     clicked = date;
     // ref: line 5
-
+    document.getElementById('insertedDate').setAttribute('value', date);
     const appointmentForDay = appointments.find(e => e.date === clicked);
     // checks if there is a saved appointment in the clicked day
 

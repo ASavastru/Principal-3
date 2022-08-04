@@ -15,6 +15,13 @@ TODO:
 /*
 * "docker compose up" starts server
 * "Ctrl+C" hotkey stops server
-*
+* 
 * we need to add login functionality with encrypted passowrd
   */
+
+
+TODO NEW:
+  - link between index.php and registration.php
+  - fix modals with ajax
+  - password hash
+  - output modal with appointments per day instead of printing on the side (needs to have a "new appointment" button that closes that modal and opens new appointment form)

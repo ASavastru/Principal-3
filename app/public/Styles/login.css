@@ -5,7 +5,7 @@ body {
     text-align: center;
 }
 
-#loginContainer {
+.loginContainer {
     z-index: 11; /*controls "depth" of modal*/
     padding: 25px;
     background-color: #ffb4b4;
@@ -16,28 +16,27 @@ body {
     height: 150px;
     top: 350px;
     left: calc(50% - 154px); /*indents modal from left*/
-    position: absolute;
 }
 
-#usernameInput, #passwordInput {
+#usernameInput, #passwordInput, #firstNameInput, #lastNameInput {
     width: 300px;
     height: 40px;
 }
 
-#usernameInput::placeholder, #passwordInput::placeholder {
+#usernameInput::placeholder, #passwordInput::placeholder, #firstNameInput::placeholder, #lastNameInput::placeholder {
     font-size: 25px;
     text-align: center;
     background-color: #394770;
     color: #ffb4b4;
 }
 
-#submitInput {
+#submitInput, #switchToLogin, #switchToRegister {
     padding:5px 15px;
-    background: #394770;
-    color: #ffb4b4;
-    border:0 none;
+    width: 100px;
+    height: 40px;
+    border: none;
     cursor: pointer;
-    border-radius: 5px;
-    left: calc(50% - 55px); /*indents modal from left*/
-    position: absolute;
+    background-color: #394770;
+    color: #ffb4b4;
 }
+
