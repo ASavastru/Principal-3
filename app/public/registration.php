@@ -108,7 +108,7 @@ if ($action == 'login') {
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../Styles/login.css">
+    <link rel="stylesheet" href="Styles/login.css">
     <meta charset="UTF-8">
     `
     <meta name="viewport"

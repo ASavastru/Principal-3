@@ -1,14 +1,14 @@
 let loginButton = document.getElementById('switchToLogin');
 if(loginButton) {
     loginButton.addEventListener('click', () => {
-        self.location.href = "../PHP/index.php";
+        self.location.href = "../index.php";
     });
 }
 
 let registerButton = document.getElementById('switchToRegister')
 if(registerButton) {
     addEventListener('click', () => {
-        self.location.href = "../PHP/registration.php";
+        self.location.href = "../registration.php";
     });
 }
 
