@@ -70,9 +70,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'setAppointment') {
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="Styles/calendar.css">
+    <link rel="stylesheet" href="../Styles/calendar.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.js" integrity="sha512-rozBdNtS7jw9BlC76YF1FQGjz17qQ0J/Vu9ZCFIW374sEy4EZRbRcUZa2RU/MZ90X2mnLU56F75VfdToGV0RiA==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-    <script src="Scripts/script.js" defer></script>
+    <script src="../Scripts/script.js" defer></script>
     <script src="https://momentjs.com/downloads/moment.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport"

@@ -108,7 +108,7 @@ if ($action == 'login') {
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="Styles/login.css">
+    <link rel="stylesheet" href="../Styles/login.css">
     <meta charset="UTF-8">
     `
     <meta name="viewport"
@@ -140,54 +140,3 @@ if ($action == 'login') {
 
 </body>
 </html>
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="es" dir="ltr">-->
-<!--<head>-->
-<!--    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">-->
-<!--    <meta charset="utf-8">-->
-<!--    <link rel="stylesheet" type="text/css" href="Styles/loginStyles.css">-->
-<!--    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">-->
-<!--</head>-->
-<!--<body>-->
-<!--<div class="main">-->
-<!--    <div class="container a-container" id="a-container">-->
-<!--        <form class="form" id="a-form" method="post" action="">-->
-<!--            <h2 class="form_title title">Create Account</h2>-->
-<!--            <div class="form__icons"></div><span class="form__span">Use your account details</span>-->
-<!--            <input class="form__input" type="text" name="firstname" placeholder="First Name">-->
-<!--            <input class="form__input" type="text" name="lastname" placeholder="Last Name"-->
-<!--            <input class="form__input" type="text" name="username" placeholder="Username">-->
-<!--            <input class="form__input" type="password" name="password" placeholder="Password">-->
-<!--            <input class="form__button button submit" type="submit" value="Register">-->
-<!--            <input type="hidden" name="action" value="register">-->
-<!--        </form>-->
-<!--    </div>-->
-<!--    <div class="container b-container" id="b-container">-->
-<!--        <form class="form" id="b-form" method="post" action="">-->
-<!--            <h2 class="form_title title">Sign in to Website</h2>-->
-<!--            <div class="form__icons"></div><span class="form__span">Use your personal details</span>-->
-<!--            <input class="form__input" type="text" name="username" placeholder="Username">-->
-<!--            <input class="form__input" type="password" name="password" placeholder="Password">-->
-<!--            <input class="form__button button submit" type="submit" value="Log In">-->
-<!--            <input type="hidden" name="action" value="login">-->
-<!--        </form>-->
-<!--    </div>-->
-<!--    <div class="switch" id="switch-cnt">-->
-<!--        <div class="switch__circle"></div>-->
-<!--        <div class="switch__circle switch__circle--t"></div>-->
-<!--        <div class="switch__container" id="switch-c1">-->
-<!--            <h2 class="switch__title title">Welcome Back !</h2>-->
-<!--            <p class="switch__description description">To connect with us please login with your personal info</p>-->
-<!--            <button class="switch__button button switch-btn">SIGN IN</button>-->
-<!--        </div>-->
-<!--        <div class="switch__container is-hidden" id="switch-c2">-->
-<!--            <h2 class="switch__title title">Hello Friend !</h2>-->
-<!--            <p class="switch__description description">Enter your personal details and start your journey with us</p>-->
-<!--            <button class="switch__button button switch-btn">SIGN UP</button>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!--<script src="Scripts/loginAnimations.js"></script>-->
-<!--</body>-->
-<!--</html>-->
