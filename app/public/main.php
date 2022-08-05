@@ -110,7 +110,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'setAppointment') {
 
     <hr/>
 
-    <div id="employees"></div>
+    <div><a href="logout.php"><button id="logoutButton">Log Out</button></a></div>
 </div>
 
 <div id="newAppointmentModal">

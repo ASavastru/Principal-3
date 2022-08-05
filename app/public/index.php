@@ -10,6 +10,10 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Welcome To My First Full-Stack <a href="registration.php">Application</a></h1>
+<br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/>
+<h1 style="font-size: 65px">Welcome To My First Full-Stack <a href="registration.php">Application</a></h1>
 </body>
 </html>
