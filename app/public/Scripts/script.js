@@ -13,7 +13,7 @@ const calendar = document.getElementById('calendar');
 const newAppointmentModal = document.getElementById('newAppointmentModal');
 const deleteAppointmentModal = document.getElementById('deleteAppointmentModal');
 const backDrop = document.getElementById('modalBackDrop');
-const appointmentTitleInput = document.getElementById('appointmentTitleInput');
+// const appointmentTitleInput = document.getElementById('appointmentTitleInput');
 // these constants are declared globally because they're used everywhere
 // they reference to ids
 
@@ -204,7 +204,7 @@ function closeModal() {
     newAppointmentModal.style.display = 'none';
     deleteAppointmentModal.style.display = 'none';
     backDrop.style.display = 'none';
-    appointmentTitleInput.value = '';
+    // appointmentTitleInput.value = '';
     clicked = null;
     // closes/clears/resets everything related to the modal
 
@@ -261,7 +261,6 @@ function initButtons() {
     document.getElementById('saveButton').addEventListener('click', saveAppointment);
 
     document.getElementById('cancelButton').addEventListener('click', () => {
-        appointmentTitleInput.classList.remove('error');
         //eliminates error style when cancelButton isClicked
         closeModal();
     });
