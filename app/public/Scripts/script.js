@@ -10,6 +10,7 @@ let appointments = localStorage.getItem('appointments') ?JSON.parse(localStorage
 // it either returns an array of appointment objects or an empty array
 
 const calendar = document.getElementById('calendar');
+const interstitialModal = document.getElementById('interstitialModal');
 const newAppointmentModal = document.getElementById('newAppointmentModal');
 const deleteAppointmentModal = document.getElementById('deleteAppointmentModal');
 const backDrop = document.getElementById('modalBackDrop');
@@ -139,26 +140,20 @@ function load() {
 
             if(appointmentForDay) {
                 const appointmentDiv = document.createElement('div');
-                appointmentDiv.classList.add('appointment');
+                // appointmentDiv.classList.add('appointment');
                 // appointmentDiv.innerText = appointmentForDay.title+" "+nameTest;
                 daySquare.appendChild(appointmentDiv);
             }
             // if there is one,
             // shows appointment
 
-            daySquare.addEventListener('click', (event) => {
-                let clickedDate = event.target.dataset.date;
-                document.getElementById('selectedDate').value = clickedDate;
-                openModal(clickedDate);
-                // let url = new URL(window.location.href);
-                // window.location.setParameter('')
-                // url.searchParams.set('selectedDate', clickedDate);
-                // window.location.href = url.href;
-
-            });
-            // listens for clicks on each div
-            // and calls openModal for the specific date clicked
-
+            daySquare.addEventListener('click', function () {
+                let clickedDate = this.dataset.date;
+                // document.getElementById('selectedDate').value = clickedDate;
+                document.getElementById('storeDate').innerText = clickedDate;
+                interstitialModal.style.display = 'block';
+                backDrop.style.display = 'block';
+            })
 
         } else {
             daySquare.classList.add('padding');
@@ -178,25 +173,20 @@ function load() {
 //     });
 // }
 
-function openModal(date) {
+function openViewAppointmentsModal(date) {
+    document.getElementById('insertedDate').setAttribute('value', date);
+    backDrop.style.display  = 'block';
+    document.getElementById('submitAppointmentInformation').click();
+}
+
+function openCreateAppointmentModal(date) {
     // function that opens the modal
     clicked = date;
     // ref: line 5
+    document.getElementById('checkViewOrCreate').setAttribute('value', 'ok');
     document.getElementById('insertedDate').setAttribute('value', date);
-    const appointmentForDay = appointments.find(e => e.date === clicked);
-    // checks if there is a saved appointment in the clicked day
-
-    if (appointmentForDay){
-        document.getElementById('appointmentText').innerText = appointmentForDay.title;
-        // shows appointment text a.k.a. whatever the use inputted
-
-        deleteAppointmentModal.style.display = 'block';
-    } else {
-        newAppointmentModal.style.display = 'block';
-        // changes style of this modal a.k.a. shows it
-    }
-
     backDrop.style.display = 'block';
+    newAppointmentModal.style.display = 'block';
     // changes style of backDrop a.k.a. shows it
 }
 
@@ -269,16 +259,20 @@ function initButtons() {
 
     document.getElementById('closeButton').addEventListener('click', closeModal);
 
+    document.getElementById('viewAppointment').addEventListener('click', () => {
+        openViewAppointmentsModal(document.getElementById('storeDate').innerText);
+        interstitialModal.style.display = 'none';
+        backDrop.style.display = 'none';
+    });
+
+    document.getElementById('createAppointment').addEventListener('click', () => {
+        openCreateAppointmentModal(document.getElementById('storeDate').innerText);
+        interstitialModal.style.display = 'none';
+        backDrop.style.display = 'none';
+    });
 }
 
 load(); // loads calendar
 initButtons(); // initializes buttons
 
 
-// TODO: change openModal() to show a by size, dynamically changing list of appointments,
-//  with a scrolly thingy WITHIN the modal, by hour, fetched from database and displayed in chronological
-//  order, each with a photo of the person that has to attend the appointment, the startTime and
-//  the endTime and the scope of the appointment
-
-// TODO: learn try/catch and other related stuff
-//  learn debugging stuffs
