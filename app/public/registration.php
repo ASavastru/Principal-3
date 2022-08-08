@@ -107,42 +107,6 @@ if ($action == 'login') {
 
 ?>
 
-<!--<!doctype html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <link rel="stylesheet" href="Styles/login.css">-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport"-->
-<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
-<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
-<!--    <title>Document</title>-->
-<!--</head>-->
-<!--<body>-->
-<!---->
-<!--<div id="loginAndRegistrationContainer">-->
-<!--    <div class="registrationContainer">-->
-<!--        <form method="post">-->
-<!--            <input type="text" name="firstname" placeholder="Enter First Name" id="firstNameInput"/>-->
-<!--            <input type="text" name="lastname" placeholder="Enter Last Name" id="lastNameInput"/>-->
-<!--            <input type="text" name="username" placeholder="Enter Username" id="usernameInput"/>-->
-<!--            <input type="password" name="password" placeholder="Enter Password" id="passwordInput"/>-->
-<!--            <input type="submit" id="submitInput" value="Register">-->
-<!--            <input type="hidden" name="action" value="register">-->
-<!--        </form>-->
-<!--    </div>-->
-<!--    <div class="loginContainer">-->
-<!--        <form method="post" id="loginPost">-->
-<!--            <input type="text" name="username" placeholder="Enter Username" id="usernameInput"/>-->
-<!--            <input type="password" name="password" placeholder="Enter Password" id="passwordInput"/>-->
-<!--            <input type="submit" id="submitInput" value="Log In"/>-->
-<!--            <input type="hidden" name="action" value="login">-->
-<!--        </form>-->
-<!--    </div>-->
-<!--</div>-->
-<!---->
-<!--</body>-->
-<!--</html>-->
-
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 <head>
